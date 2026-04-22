@@ -1,0 +1,8 @@
+CREATE SEQUENCE IF NOT EXISTS public.todoitem_id_seq INCREMENT 1;
+CREATE TABLE IF NOT EXISTS public.todoitem
+(
+    id integer NOT NULL DEFAULT nextval('todoitem_id_seq'::regclass),
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    iscompleted boolean NOT NULL DEFAULT false,
+    CONSTRAINT todoitem_pkey PRIMARY KEY (id)
+);
